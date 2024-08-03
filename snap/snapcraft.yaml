@@ -1,0 +1,55 @@
+---
+name: bibata-all-cursor
+version: '2.0.7'
+base: core22
+license: GPL-3.0
+grade: stable
+confinement: strict
+summary: Bibata Modern Ice Cursor Theme
+description: |
+  This snap contains the Bibata Modern Ice Cursor Theme from  ful1e5 (https://github.com/ful1e5/Bibata_Cursor/releases).
+  TLDR; This cursor set is a masterpiece of cursors available on the internet, hand-designed by Abdulkaiz Khatri.
+
+  Bibata is an open source, compact, and material designed cursor set that aims to improve the cursor experience for users. It is one of the most popular cursor sets in the Linux community and is now available for free on Windows as well, with multiple color and size options. Its goal is to offer personalized cursors to users.
+  What does "Bibata" mean?
+  The sweetest word I ever spoke was "BI-Buh," which, coincidentally, is also the word for peanuts. To make it more pronounceable and not sound like a baby's words, I added the suffix "Ta." And with that, my journey in the world of open source began.
+slots:
+  icon-themes:
+    interface: content
+    source:
+      read:
+        - $SNAP/share/icons/Bibata-Modern-Amber
+        - $SNAP/share/icons/Bibata-Modern-Amber-Right
+        - $SNAP/share/icons/Bibata-Modern-Classic
+        - $SNAP/share/icons/Bibata-Modern-Classic-Right
+        - $SNAP/share/icons/Bibata-Modern-Ice
+        - $SNAP/share/icons/Bibata-Modern-Ice-Right
+        - $SNAP/share/icons/Bibata-Original-Amber
+        - $SNAP/share/icons/Bibata-Original-Amber-Right
+        - $SNAP/share/icons/Bibata-Original-Classic
+        - $SNAP/share/icons/Bibata-Original-Classic-Right
+        - $SNAP/share/icons/Bibata-Original-Ice
+        - $SNAP/share/icons/Bibata-Original-Ice-Right
+parts:
+  cursors:
+    plugin: dump
+    source: Bibata.tar.bz2
+    override-build: |
+      snapcraftctl build
+      pwd
+      ls -l
+      mkdir -p $CRAFT_PART_INSTALL/share/icons
+      mv -f $CRAFT_PART_INSTALL/Bibata* $CRAFT_PART_INSTALL/share/icons/
+    stage:
+      - share/icons/Bibata-Modern-Amber
+      - share/icons/Bibata-Modern-Amber-Right
+      - share/icons/Bibata-Modern-Classic
+      - share/icons/Bibata-Modern-Classic-Right
+      - share/icons/Bibata-Modern-Ice
+      - share/icons/Bibata-Modern-Ice-Right
+      - share/icons/Bibata-Original-Amber
+      - share/icons/Bibata-Original-Amber-Right
+      - share/icons/Bibata-Original-Classic
+      - share/icons/Bibata-Original-Classic-Right
+      - share/icons/Bibata-Original-Ice
+      - share/icons/Bibata-Original-Ice-Right

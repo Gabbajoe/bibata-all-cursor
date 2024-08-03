@@ -1,3 +1,11 @@
+*.py
+*.bak
+store/
+deb/
+*.snap
+.vscode/*
+screens/*
+
 # Build and Release Folders
 bin-debug/
 bin-release/

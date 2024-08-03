@@ -21,7 +21,7 @@ git clone https://github.com/Gabbajoe/bibata-cursors-snap
 cd bibata-cursors-snap
 wget https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.7/Bibata.tar.xz
 tar xJf Bibata.tar.xz
-tar cjf Bibata,tar,bz2 Bibata-*
+tar cjf Bibata.tar.bz2 Bibata-*
 rm -r Bibata-*
 rm Bibata.tar.xz
 ```
@@ -52,7 +52,7 @@ sudo snap connect [snap-you-want-to-theme]:icon-themes bibata-all-cursor
 To apply to all applications run the following command. Thanks to @flexiondotorg for the handy loop.
 
 ```bash
-for plug in $(snap connections | grep gtk-common-themes:icon-themes | awk '{print $2}'); do sudo snap connect ${plug} bibata-allcursor:icon-themes; done
+for plug in $(snap connections | grep gtk-common-themes:icon-themes | awk '{print $2}'); do sudo snap connect ${plug} bibata-all-cursor:icon-themes; done
 ```
 
 *NOTE*: Some apps like the Ubuntu Snap Store may require logging out, and back in to load the changes.
